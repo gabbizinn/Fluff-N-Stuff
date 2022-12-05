@@ -1,0 +1,19 @@
+{% comment %} #Bootstrap Nav Bar Code {% endcomment %}
+{% load static %}
+<nav class="navbar navbar-light" style="background-color: #F4F4F4;">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">Fluff N Stuff</a>
+    {% comment %} <img src="{% static 'static/images/Navbar.png' %}"> {% endcomment %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        {% comment %} <li class="nav-item active">
+          <a class="nav-link" href="{% url "home" %}">Home <span class="sr-only">(current)</span></a>
+        </li> {% endcomment %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "add_product" %}">Products</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

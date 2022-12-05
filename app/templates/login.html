@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href= "{% static "styles.css"%}">
+    <title>Login Page Application</title>
+</head>
+<body>
+    <h3>Customer Log In Page</h3>
+<div class = "login_box">
+    <form method = "POST">
+    {% csrf_token %}
+    <div class="login">
+            <input type= "text" name= "username" placeholder= "Username:">
+            <input type= "text" name= "password" placeholder= "Password:">
+            <button> <a href="http://127.0.0.1:5500/app/templates/catalog.html#"> Click to view our Catalog!</a></button>
+    </div>
+        
+    </form>
+    {{form.errors}}
+    {% comment %} <div class = "sign_up_link">
+        Don't have an account? <a href= "{%url 'signup' %}"> Sign Up</a>
+    </div> {% endcomment %}
+</div>
+</body>
+</html>
