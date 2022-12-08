@@ -9,21 +9,25 @@
     <title>Login Page Application</title>
 </head>
 <body>
-    <h3>Customer Log In Page</h3>
-<div class = "login_box">
-    <form method = "POST">
-    {% csrf_token %}
-    <div class="login">
-            <input type= "text" name= "username" placeholder= "Username:">
-            <input type= "text" name= "password" placeholder= "Password:">
-            <button> <a href="http://127.0.0.1:5500/app/templates/catalog.html#"> Click to view our Catalog!</a></button>
-    </div>
-        
-    </form>
-    {{form.errors}}
-    {% comment %} <div class = "sign_up_link">
-        Don't have an account? <a href= "{%url 'signup' %}"> Sign Up</a>
-    </div> {% endcomment %}
+<div class="container">
+        <h3> Log In</h3>
+        <form method = "POST" action="" class="contactform">
+        {% csrf_token %}
+        <div class="inputbox">
+            <label>Username</label>
+            <input type= "text" name= "username">
+        </div>
+        <div class="inputbox">
+            <label>Password</label>
+            <input type= "password" name= "password">
+        </div>
+            <button type="submit"> <a href="{% url 'catalog' %}"> Log in</a></button>
+            
+        </form>
+        {{form.errors}}
+        <div class = "sign_up_link">
+            Don't have an account? <a href= "{%url 'signup' %}"> Sign Up</a>
+        </div>
 </div>
 </body>
 </html>

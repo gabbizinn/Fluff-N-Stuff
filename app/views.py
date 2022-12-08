@@ -24,20 +24,20 @@ def show_product(request):
     product = Product.objects.all()
     return render(request,"show.html",{"product":product})
 
-#update products page(DOESN'T WORK YET SOMETHING IS WRONG WITH THE ID AND URL)
+#update products page( WITH THE ID AND URL *possibly taking id out of all code)
 def update_product(request,pk):
-    product = Product.objects.get(customer_id=pk)
+    product = Product.objects.get(id=pk)
     form = ProductForm(instance=product)
     if request.method == "POST":
-        form = ProductForm(request.POST or None, instance=product)
-        print(form.is_valid())
+        form = ProductForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
+            return redirect("show_product/")
     return render(request,"update.html",{"product":product})
 
-#delete products page (DOESN'T WORK YET SAME THING AS UPDATE)
+#delete products page (WITH THE ID AND URL *possibly taking id out of all code)
 def delete_product(request,pk):
-    form = Product.objects.get(customer_id=pk)
+    form = Product.objects.get(id=pk)
     form.delete()
     print(form)
     context={"product":form}
@@ -65,6 +65,10 @@ def sign_in(request):
             return redirect("home")
     context = {}
     return render(request, "login.html", context)
+
+#catalog page
+def catalog(request):
+    return render(request, "catalog.html")
 
 
     

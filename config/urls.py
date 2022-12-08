@@ -31,9 +31,11 @@ urlpatterns = [
     #delete products page
     path("show_product/delete_product/<int:pk>/", views.delete_product, name= "delete_product"),
     #sign up page
-    path('signup/', views.sign_up, name="signup"),
+    path("signup/", views.sign_up, name="signup"),
     #login in age
-    path('signin/', views.sign_in, name="signin"),
+    path("signin/", views.sign_in, name="signin"),
+    #catalog page
+    path("catalog/", views.catalog, name="catalog")
 
 
 
