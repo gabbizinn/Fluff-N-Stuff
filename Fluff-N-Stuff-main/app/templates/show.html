@@ -1,0 +1,38 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4> Customer's Receipt Details Page</h4>
+    <a href="{% url 'add_product' %}" class="btn btn-sm btn-info">Add New Products To Your Cart!</a>
+    <a href="{% url 'catalog' %}" class="btn btn-sm btn-info">Catalog Page</a>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Customer's Name</th>
+                <th>Product Name</th>
+                <th>Product Size</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in product%}
+            <tr>
+                <td>{{p.id}}</td>
+                <td>{{p.customer_name}}</td>
+                <td>{{p.product_name }}</td>
+                <td>{{p.product_size}}</td>
+                <td>
+                    <a href= "{%url "update_product" p.id%}" class="btn btn-sm btn-info">Update Your Receipt</a>
+                    <a href= "{%url "delete_product" p.id%} "class="btn btn-sm btn-danger">Delete Receipt</a>
+                </td>
+            </tr>
+            {% endfor block %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

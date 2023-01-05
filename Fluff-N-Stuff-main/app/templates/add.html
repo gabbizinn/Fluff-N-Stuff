@@ -1,0 +1,38 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4> Make a new Order!</h4>
+    <hr>
+    
+    <form action=""method="POST">
+        {% csrf_token %} 
+        {% comment %} <div class="add-group">
+            <label for="">What Number Product Would You Like? </label>
+            <input type="text" name="customer_id" class="form-control">
+        </div> {% endcomment %}
+        <div class="add-group">
+            <label for="">Your Name </label>
+            <input type="text" name="customer_name" class="form-control">
+        </div>
+
+        <div class="add-group">
+            <label for="">Product Name</label>
+            <input type="text" name="product_name" class="form-control">
+        </div>
+
+        <div class="add-group">
+            <label for="">Product Size</label>
+            <input type="text" name="product_size" class="form-control">
+        </div>
+
+        <div class="add-group">
+            <button class="btn btn-primary" type="submit"> Add To My Receipt!</button>
+            <a href="{% url 'show_product' %}" class="btn btn">Show Details about my Receipts</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

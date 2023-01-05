@@ -1,0 +1,41 @@
+<!doctype html>{% load static %}
+{% comment %} 
+{% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4> Update Student Application</h4>
+    <hr>
+    
+    <form action="" method="POST">
+        {% csrf_token %} 
+         {% comment %} <div class="update-group">
+            <label for="">Customer's ID Number</label>
+            <input type="text" name="customer_id" value="{{product.customer_id}}" class="form-control">
+        </div>  {% endcomment %}
+
+        <div class="update-group">
+            <label for="">Customer's Name</label>
+            <input type="text" name="customer_name" value="{{product.customer_name}}" class="form-control">
+        </div>
+
+        <div class="update-group">
+            <label for="">Product Name</label>
+            <input type="text" name="product_name" value="{{product.product_name}}" class="form-control">
+        </div>
+
+        <div class="update-group">
+            <label for="">Product Size</label>
+            <input type="text" name="product_size" value="{{product.product_size}}" class="form-control">
+        </div>
+
+        <div class="update-group">
+            {% comment %} <button class="btn btn-primary" type="submit"> Update Student</button> {% endcomment %}
+            <button><a href="{% url 'show_product' %}" class="btn btn">Update Product</a></button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
